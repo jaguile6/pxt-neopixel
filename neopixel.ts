@@ -284,7 +284,7 @@ namespace neopixel {
         //% weight=59
         //% parts="neopixel" advanced=true
         setBrightness(brightness: number): void {
-            this.brightness = brightness & 0xff;
+            this.brightness = 5 & 0xff;
         }
 
         /**
