@@ -48,7 +48,7 @@ namespace neopixel {
         buf: Buffer;
         pin: DigitalPin;
         // TODO: encode as bytes instead of 32bit
-        brightness: number;
+        brightness: number = 5;
         start: number; // start offset in LED strip
         _length: number; // number of LEDs
         _mode: NeoPixelMode;
@@ -279,12 +279,9 @@ namespace neopixel {
          * Set the brightness of the strip. This flag only applies to future operation.
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
-        //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
-        //% strip.defl=strip
-        //% weight=59
-        //% parts="neopixel" advanced=true
+        
         setBrightness(brightness: number): void {
-            this.brightness = 5 & 0xff;
+            this.brightness = 5;
         }
 
         /**
@@ -500,7 +497,7 @@ namespace neopixel {
         strip._length = numleds;
         strip._mode = mode || NeoPixelMode.RGB;
         strip._matrixWidth = 0;
-        strip.setBrightness(128)
+        strip.setBrightness(5)
         strip.setPin(pin)
         return strip;
     }
